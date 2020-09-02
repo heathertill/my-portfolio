@@ -1,16 +1,21 @@
 import * as React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import './scss/app';
+
 import Hello from './components/public/Hello';
+import Navbar from './components/public/Navbar';
 
 const App: React.SFC<AppProps> = () => {
     return (
         <BrowserRouter>
             <main className="container">
-            <Switch>
-                <Route exact path='/' component={Hello} />
-            </Switch>
-           </main>
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' component={Hello} />
+                    
+                </Switch>
+            </main>
         </BrowserRouter>
     );
 }
