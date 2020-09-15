@@ -50,7 +50,7 @@ const Hello: React.SFC<HelloProps> = () => {
 
             </section>
             <section id="sec2" className="second-section">
-                <div className="row">
+                <div className="row second-sec-div">
 
                     <div className="col-md lft-section">
 

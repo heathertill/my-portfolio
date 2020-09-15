@@ -12,11 +12,13 @@ $theme-colors: (
 $font-title: 'Oswald', sans-serif;
 $font-body: 'Cardo', serif;
 $font-head: 'Coda', cursive;
+$font-content: 'Dosis', sans-serif;
 
 $code-img: url(/public/images/shoppingCode.png);
 
 @import url('https://fonts.googleapis.com/css2?family=Cardo&family=Oswald&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Coda:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 
 body {
     font-family: $font-body;
@@ -74,8 +76,7 @@ body {
 
 .bm-burger-bars-hover {
     background: #373a47;
-    
-  }
+}
 
 .bm-menu-wrap {
     position: fixed;
@@ -120,7 +121,7 @@ body {
 
 .menu-item {
     // color: #efefef;
-    color: rgba(239, 239, 239, 0.5)
+    color: rgba(239, 239, 239, 0.5);
 }
 
 .menu-item:hover {
@@ -131,7 +132,7 @@ body {
 #active-item {
     // color: rgba(239, 239, 239);
     // color: red
-    color: #efefef
+    color: #efefef;
 }
 
 // .hamburger-menu {
@@ -196,7 +197,6 @@ body {
     height: 900px;
     // background-image: url(https://visitvulcan.com/uploads/2019/12/homeslide_visit_vulcan.jpg);
     // background-image: url(https://images.unsplash.com/photo-1599296737768-659f245ba6d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80);
-
 }
 
 .text-overlay-style {
@@ -207,7 +207,7 @@ body {
     background-image: url(https://images.unsplash.com/photo-1599296737768-659f245ba6d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80);
 }
 
-.row {
+.second-sec-div {
     height: inherit;
     margin-left: 0;
 }
@@ -265,8 +265,83 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: inherit;
     z-index: 0;
     position: relative;
-    object-fit: fill;
+    // object-fit: fill;
+}
+
+.about {
+    width: 100vw;
+}
+
+.about-left {
+    padding: 0;
+    width: 50vw;
+    height: 700px;
+}
+
+.about-image {
+    height: 700px;
+    width: 50.55vw;
+    object-fit: cover;
+    // margin-right: 0;
+}
+
+.about-img-div {
+    width: 50vw;
+    // margin-right: 0;
+    // text-align: center;
+    // position: relative;
+    // top: 10vw;
+}
+
+.about-right {
+    height: 700px;
+    padding: 0;
+    background-color: #4b3b47;
+}
+
+.about-text {
+    padding-top: 5vw;
+    padding-right: 5vw;
+    padding-left: 5vw;
+}
+
+.about-text-heading {
+    font-size: 8em;
+    line-height: 1;
+    color: #efefef;
+}
+
+.about-text-content {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #efefef;
+}
+
+.skills-section {
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 2em;
+    color: #50514f;
+    
+}
+
+.about-skills {
+    color: #50514f;
+    text-align: left;
+    font-family: 'Dosis', sans-serif;
+}
+
+.skill-list {
+    list-style: disc;
+    font-size: 30px;
+}
+
+li {
+    padding-left: 10px;
 }
