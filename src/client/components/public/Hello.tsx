@@ -1,62 +1,61 @@
 import * as React from 'react';
-import { useState } from 'react';
-import {RouteComponentProps} from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { RouteComponentProps } from 'react-router-dom'
+import { urlencoded } from 'express';
 
 export interface HelloProps extends RouteComponentProps { }
 
 const Hello: React.SFC<HelloProps> = () => {
 
-    const [animate, setAnimate] = useState(true);
-
-    // const test = (e: React.MouseEvent<HTMLDivElement>) => {
-    // let slide = document.querySelector('.lft-section');
-    //     let box = document.querySelector('.box');
-    //     box.addEventListener('click', () => {
-    //         slide.classList.toggle('toggled')
-
-    //     }
-    // }
+    const [animate, setAnimate] = useState(false);
 
 
 
-    const expandFunc = (e: React.MouseEvent<HTMLDivElement>) => {
+
+    const handleAnimate = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (e) {
+            setAnimate(!animate);
+            if (animate !== true) {
+                expandFunc()
+            } else {
+                closeFunc()
+            }
+        }
+    }
+
+    const expandFunc = () => {
         let slide = document.querySelector('.lft-section');
-        if (animate !== false) {
-            setAnimate(!animate)
-            console.log('animate', animate)
-            // let slide = document.querySelector('.lft-section');
-            slide.addEventListener('click', () => {
-                slide.classList.toggle('toggled', animate)
-                console.log('addAnim', animate)
-            })
-        }
-        else {
-            setAnimate(!animate)
-            console.log('elseAnimate', animate)
-            // let slide = document.querySelector('.lft-section');
-            slide.addEventListener('click', e => {
-                slide.classList.toggle('toggled', animate)
-                console.log('remAnim', animate)
-            })
-        }
+        slide.classList.add('toggled');
+    }
 
-    };
-
-
+    const closeFunc = () => {
+        let slide = document.querySelector('.lft-section');
+        slide.classList.remove('toggled');
+    }
 
 
     return (
         <>
             <section className="first-section">
-                <h1 className="text-myRed">This is a test</h1>
+                <div className="sec-div">
+                    <img className="sec-img" src="https://visitvulcan.com/uploads/2019/12/homeslide_visit_vulcan.jpg" alt="bham" />
+                    <div className="img-sec-div">
+                        <img className="first-section-img" src="images/monoOver2.png" alt="monoOverlay" />
+
+                    </div>
+                </div>
+
+
+                {/* <img className="first-section-img" src="images/monoOver2.png" alt="monoOverlay" /> */}
+
             </section>
-            <section className="second-section">
+            <section id="sec2" className="second-section">
                 <div className="row">
-                    {/* <div className="col-md lft-section" id="grow">
-                        <a className="box relative" href="#grow"></a>
-                    </div> */}
+
                     <div className="col-md lft-section">
-                        <div className="box relative" onClick={(e: React.MouseEvent<HTMLDivElement>) => expandFunc(e)}></div>
+
+                        <img src="images/shoppingCode.png" alt="shoppingCode" className="second-section-img" style={{ opacity: 0.75 }} />
+                        <div className="box relative" onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAnimate(e)}></div>
                     </div>
                 </div>
             </section>
