@@ -6,6 +6,7 @@ import './scss/app';
 import Hello from './components/public/Hello';
 import Navbar from './components/public/Navbar';
 import About from './components/public/About';
+import Contact from './components/public/Contact';
 
 const App: React.SFC<AppProps> = () => {
     return (
@@ -15,6 +16,7 @@ const App: React.SFC<AppProps> = () => {
                 <Switch>
                     <Route exact path='/' component={Hello} />
                     <Route exact path='/about' component={About} />
+                    <Route exact path='/contact' component={Contact} />
                 </Switch>
             </main>
         </BrowserRouter>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'
 
 export interface AboutProps { }
 
@@ -16,10 +17,11 @@ const About: React.SFC<AboutProps> = () => {
                         <div className="about-text-heading">Heather Till</div>
                         <div className="about-text-content">The best thing about me is that I am a problem solver</div>
                     </div>
+                    <Link to="/Contact">Contact Me</Link>
                 </div>
             </div>
             <div className="skills-section p-3">
-            <div className="skills-title">My Skills</div>
+                <div className="skills-title">My Skills</div>
                 <div className="row about-skills py-3 mx-5">
                     <div className="col-md">
                         <ul className="skill-list">

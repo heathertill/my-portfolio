@@ -9,46 +9,28 @@ export interface NavbarProps { }
 const Navbar: React.SFC<NavbarProps> = () => {
 
     const homeId = location.pathname === "/" ? "active-item" : "";
-    const aboutId = location.pathname === "/About" ? "active-item" : "wrong";
+    const aboutId = location.pathname === "/about" ? "active-item" : "";
+    const contactId = location.pathname === "/contact" ? "active-item" : ""
 
 
- 
     const [open, setOpen] = useState(false);
 
-    const handleOpen = () => {
+   
 
-        setOpen(!open)
-        console.log('handleOpen open', open)
-    }
-
-    const closeMenu = () => {
-        console.log('before', open)
-        setOpen(false)
-        console.log('after', open)
-    }
-
-    const handleClick = () => {
-        setOpen(!open)
-        console.log('menu clicked', open)
-    }
-
-    const navSelect = () => {
-        setOpen(!open)
-        console.log('nav clicked', open)
-    }
+ 
 
 
     return (
         <section className="nav-section sticky-top" >
-            <Menu 
+            <Menu
                 isOpen={open}
                 disableAutoFocus
                 noOverlay
                 customCrossIcon={false}
             >
                 <a id={homeId} href="/" className="menu-item" >Home</a>
-                <a id={aboutId} href="/About" className="menu-item" >About</a>
-                <a href="/#sec2" className="menu-item">Second Section</a>
+                <a id={aboutId} href="/about" className="menu-item" >About</a>
+                <a id={contactId} href={"/contact"} className="menu-item">Contact</a>
             </Menu>
 
 
