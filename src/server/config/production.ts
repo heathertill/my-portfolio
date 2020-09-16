@@ -11,6 +11,9 @@ export default {
     },
     auth: {
         secret: process.env.SECRET
+    },
+    mailgun: {
+        apiKey: process.env.MAILGUN_APIKEY
     }
 }
 

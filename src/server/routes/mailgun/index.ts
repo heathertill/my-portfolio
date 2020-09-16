@@ -5,7 +5,7 @@ const router = express.Router();
     
 router.post('/', async (req, res, next) => {
     try {
-        await sendEmail('ktill6927@charter.net', req.body.email, req.body.subject, req.body.message);
+        await sendEmail('htillwebdev@gmail.com', req.body.email, req.body.subject, req.body.message);
         res.send('Email sent!');
     } catch (err) {
         console.log(err);
