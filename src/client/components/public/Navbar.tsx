@@ -23,12 +23,10 @@ const Navbar: React.SFC<NavbarProps> = () => {
     return (
         <section className="nav-section sticky-top" >
             <Menu
-               
-                isOpen={open}
+                // isOpen={open}
                 disableAutoFocus
                 noOverlay
                 customCrossIcon={false}
-                right
             >
                 <a id={homeId} href="/" className="menu-item" >Home</a>
                 <a id={aboutId} href="/about" className="menu-item" >About</a>

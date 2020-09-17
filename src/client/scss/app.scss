@@ -64,7 +64,7 @@ body {
     position: fixed;
     width: 36px;
     height: 30px;
-    left: 36px;
+    right: 36px;
     top: 36px;
 }
 
@@ -78,10 +78,10 @@ body {
     background: #373a47;
 }
 
-.bm-menu-wrap {
+div.bm-menu-wrap {
     position: fixed;
     height: 100%;
-    // width: 100vw;
+    width: 100vw;
 }
 
 .bm-menu {
@@ -91,15 +91,20 @@ body {
     width: 100vw;
 }
 
-.bm-cross {
-    background: #bdc3c7;
+.burger-menu {
+    width: 100vw;
 }
 
 /* Position and sizing of clickable cross button */
-// .bm-cross-button {
-//     height: 50px;
-//     width: 50px;
-// }
+.bm-cross-button {
+    height: 50px;
+    width: 50px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    background: red;
+}
 
 /* Wrapper for item list */
 .bm-item-list {
@@ -346,6 +351,35 @@ li {
     padding-left: 10px;
 }
 
+.contact-section {
+    height: inherit;
+}
+
+
+
 .email-form {
     padding: 5em;
+    margin: 0;
+}
+
+.name-input {
+    font-size: 2em
+}
+
+.email-input {
+    // height: 4em;
+    font-size: 2em
+
+}
+
+.subject-input {
+    // height: 4em;
+    font-size: 2em
+
+}
+
+.message-input {
+    // height: 20em;
+    font-size: 2em
+
 }
