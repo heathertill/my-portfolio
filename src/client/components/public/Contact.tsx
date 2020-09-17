@@ -30,6 +30,7 @@ const Contact: React.SFC<ContactProps> = () => {
                 history.back()
             } else {
                 setSaveStatus('error')
+                handleConfirm()
             }
         } catch (e) {
             console.log(e)
@@ -38,8 +39,8 @@ const Contact: React.SFC<ContactProps> = () => {
     }
 
     const handleConfirm = () => {
-        if (saveStatus === 'erroe') {
-            Swal.fire('Please check required fields')
+        if (saveStatus === 'error') {
+            Swal.fire({title: 'Please check required fields', backdrop: 'swal2-backdrop-hide'})
         }
         // else if (saveStatus === 'error') {
 
