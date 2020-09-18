@@ -33,9 +33,9 @@ body {
 }
 
 .work-section {
-    background-color: #efefef;
+    background-color: #50514f;
     height: 100vw;
-    // padding: 5em;
+    overflow: auto;
 }
 
 .work-background {
@@ -43,10 +43,18 @@ body {
     height: 900px;
     width: 100vw;
     object-fit: cover;
+    filter: blur(3px);
+    // -webkit-filter: blur(1.5px);
 }
 
 .work-intro {
     margin: 3em;
+    
+}
+
+.work-title {
+    color: #efefef;
+    font-size: 5em;
 }
 
 .work-over {
@@ -274,7 +282,7 @@ div.bm-menu-wrap {
     padding: 0;
     width: 50vw;
     height: 750px;
-    background-color:  #efefef;
+    background-color: #efefef;
 }
 
 .button-div {
