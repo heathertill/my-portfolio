@@ -10,7 +10,8 @@ const Navbar: React.SFC<NavbarProps> = () => {
 
     const homeId = location.pathname === "/" ? "active-item" : "";
     const aboutId = location.pathname === "/about" ? "active-item" : "";
-    const contactId = location.pathname === "/contact" ? "active-item" : ""
+    const contactId = location.pathname === "/contact" ? "active-item" : "";
+    const workId = location.pathname === "/work" ? "active-item" : "";
 
 
     const [open, setOpen] = useState(false);
@@ -30,7 +31,9 @@ const Navbar: React.SFC<NavbarProps> = () => {
             >
                 <a id={homeId} href="/" className="menu-item" >Home</a>
                 <a id={aboutId} href="/about" className="menu-item" >About</a>
-                <a id={contactId} href={"/contact"} className="menu-item">Contact</a>
+                <a id={workId} href="/work" className="menu-item">Work</a>
+                <a id={contactId} href="/contact" className="menu-item">Contact</a>
+                
             </Menu>
 
 

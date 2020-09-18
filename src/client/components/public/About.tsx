@@ -9,15 +9,18 @@ const About: React.SFC<AboutProps> = () => {
             <div className="row ml-0">
                 <div className="about-left col-md">
                     <div className="about-img-div">
-                        <img className="about-image" src="/images/family.jpeg" alt="family" />
+                        <img className="about-image" src="/images/Heather11.jpg" alt="family" />
                     </div>
                 </div>
                 <div className="about-right col-md">
                     <div className="about-text">
                         <div className="about-text-heading">Heather Till</div>
-                        <div className="about-text-content">The best thing about me is that I am a problem solver</div>
+                        <div className="about-text-content">I am a fullstack web developer. I am a problem solver. I love intuitive design and functionalily.</div>
+                        <div className="button-div">
+                            <Link className="contact-button" to="/Contact">Contact Me</Link>
+                        </div>
                     </div>
-                    <Link to="/Contact">Contact Me</Link>
+
                 </div>
             </div>
             <div className="skills-section p-3">

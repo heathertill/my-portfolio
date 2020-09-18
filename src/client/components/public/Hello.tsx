@@ -51,11 +51,9 @@ const Hello: React.SFC<HelloProps> = () => {
             </section>
             <section id="sec2" className="second-section">
                 <div className="row second-sec-div">
-
                     <div className="col-md lft-section">
-
                         <img src="images/shoppingCode.png" alt="shoppingCode" className="second-section-img" style={{ opacity: 0.75 }} />
-                        <div className="box relative" onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAnimate(e)}></div>
+                        <div className="box" onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAnimate(e)}></div>
                     </div>
                 </div>
             </section>

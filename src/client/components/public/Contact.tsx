@@ -16,15 +16,16 @@ const Contact: React.SFC<ContactProps> = () => {
 
     const handleEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        let newSubject = name + " - " + subject;
+        // let fullName = name;
+        let newMessage = name + " \n \n " + message;
         let body = {
-            emailAd,
-            newSubject,
-            message
+            from: emailAd,
+            subject,
+            message: newMessage
         }
-
         try {
-            if (name && emailAd) {
+            if (name && body.from) {
+                console.log('body', body)
                 email(body)
                 setSaveStatus('success')
                 history.back()
@@ -35,12 +36,12 @@ const Contact: React.SFC<ContactProps> = () => {
         } catch (e) {
             console.log(e)
         }
-
     }
 
     const handleConfirm = () => {
         if (saveStatus === 'error') {
-            Swal.fire({title: 'Please check required fields', backdrop: 'swal2-backdrop-hide'})
+            Swal.fire({ title: 'Please check required fields', backdrop: `rgb(239, 239, 239)` })
+            setSaveStatus('')
         }
         // else if (saveStatus === 'error') {
 
@@ -53,8 +54,11 @@ const Contact: React.SFC<ContactProps> = () => {
         <section className="contact-section">
             <form className="form-group email-form"
                 onSubmit={(e) => handleEmail(e)} >
+                <div className="title-div">
+                <div className="contact-title">Contact</div>
+            </div>
                 <div className="email-div m-3">
-                    <label className="">Name (required)</label>
+                    <label className="">Full Name (required)</label>
                     <input type="text" value={name} className="name-input input-group p-2 px-4"
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} />
                 </div>
@@ -74,7 +78,7 @@ const Contact: React.SFC<ContactProps> = () => {
                         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value)} />
                 </div>
                 <div className="button-div">
-                    <button type="submit" className="btn btn-primary rounded-pill m-3">Send</button>
+                    <button type="submit" className="btn btn-myEggplant rounded-pill m-3">Send</button>
                 </div>
                 {handleConfirm()}
             </form>
