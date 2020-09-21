@@ -44,12 +44,10 @@ body {
     width: 100vw;
     object-fit: cover;
     filter: blur(3px);
-    // -webkit-filter: blur(1.5px);
 }
 
 .work-intro {
     margin: 3em;
-    
 }
 
 .work-title {
@@ -62,20 +60,96 @@ body {
 }
 
 .work-card-col {
-    margin-right: 5em;
-    margin-left: 5em;
-    
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 .work-body {
-    margin: 8em 10em;
+    margin: 3em 10em;
+}
+
+.work-samples {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.work-card-div {
+    display: inline-block;
+    width: 20em;
+    height: 20em;
+    transition: width 1s;
+    transition-delay: 0s;
+}
+
+.fadeOut {
+    animation: fadeOut 1s;
+    animation-fill-mode: both;
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
+    animation-fill-mode: both;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.shopping {
+    transition: width 3s, height 3s;
+    position: absolute;
+    left: 4vw;
+}
+
+.shopping.toggled {
+    width: 40em;
+    height: 40em;
+}
+
+.blog {
+    transition: width 3s, height 3s;
+    position: absolute;
+    right: 4vw;
+}
+
+.blog.toggled {
+    width: 40em;
+    height: 40em;
 }
 
 .work-card {
-    background-color:  #cbeaf2;
-    border-width: 2px;
-    border-color: #ff3b3f;
+    background-color: #cbeaf2;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: #efefef;
     text-align: center;
+    // padding: 1em;
+    width: inherit;
+    height: inherit;
+}
+
+.card-img {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #50514f;
 }
 
 .nav-section {

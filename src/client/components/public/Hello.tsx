@@ -5,12 +5,9 @@ import { urlencoded } from 'express';
 
 export interface HelloProps extends RouteComponentProps { }
 
-const Hello: React.SFC<HelloProps> = () => {
+const Hello: React.FunctionComponent<HelloProps> = () => {
 
     const [animate, setAnimate] = useState(false);
-
-
-
 
     const handleAnimate = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e) {
@@ -33,7 +30,6 @@ const Hello: React.SFC<HelloProps> = () => {
         slide.classList.remove('toggled');
     }
 
-
     return (
         <>
             <section className="first-section">
@@ -44,10 +40,6 @@ const Hello: React.SFC<HelloProps> = () => {
 
                     </div>
                 </div>
-
-
-                {/* <img className="first-section-img" src="images/monoOver2.png" alt="monoOverlay" /> */}
-
             </section>
             <section id="sec2" className="second-section">
                 <div className="row second-sec-div">
