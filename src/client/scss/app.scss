@@ -7,12 +7,25 @@ $theme-colors: (
     'myEggplant': #4b3b47,
 );
 
+$myRed: #D80F09;
+$myBlack: #030708;
+$myCream: #ded2c5;
+$myEgg: #4b3b47;
+$myGold: #c9923d;
+$myWhite: #f4f4ef;
+$myBlue: #05466b;
+$myGrey: #48443d;
+
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
-$font-title: 'Oswald', sans-serif;
-$font-body: 'Cardo', serif;
+
+// serif font
+$font-serif: 'Cardo', serif;
+// sans serif font
+$font-sans: 'Dosis', sans-serif;
+
 $font-head: 'Coda', cursive;
-$font-content: 'Dosis', sans-serif;
+$font-title: 'Oswald', sans-serif;
 
 @import url('https://fonts.googleapis.com/css2?family=Cardo&family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
@@ -20,9 +33,9 @@ $font-content: 'Dosis', sans-serif;
 
 $code-img: url(/public/images/shoppingCode.png);
 
-body {
-    font-family: $font-body;
-}
+// body {
+//     font-family: $font-body;
+// }
 
 .container {
     margin-left: 0;
@@ -33,7 +46,7 @@ body {
 }
 
 .work-section {
-    background-color: #50514f;
+    background-color: $myGrey;
     height: 100vw;
     overflow: auto;
 }
@@ -43,16 +56,19 @@ body {
     height: 900px;
     width: 100vw;
     object-fit: cover;
-    filter: blur(3px);
+    filter: blur(2px);
 }
 
 .work-intro {
-    margin: 3em;
+    margin-top: 6em;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-bottom: 15%;
 }
 
 .work-title {
     color: #efefef;
-    font-size: 5em;
+    font-size: 4.5em;
 }
 
 .work-over {
@@ -64,21 +80,20 @@ body {
     margin-left: 1em;
 }
 
-.work-body {
-    margin: 3em 10em;
-}
+// .work-body {
+//     margin: 3em 5em;
+// }
 
 .work-samples {
     text-align: center;
     display: flex;
     justify-content: space-around;
-    
 }
 
 .work-card-div {
-    display: inline-block;
-    width: 20em;
-    height: 20em;
+    // display: inline-block;
+    // width: 20em;
+    // height: 20em;
     transition: width 1s;
     transition-delay: 0s;
 }
@@ -115,7 +130,6 @@ body {
 .shopping {
     transition: width 3s, height 3s;
     position: absolute;
-    left: 4vw;
 }
 
 .shopping.toggled {
@@ -123,10 +137,22 @@ body {
     height: 40em;
 }
 
+#shop-content {
+    display: none;;
+}
+
+.work-card-content.show-content {
+    visibility: visible;
+}
+
+.over-work {
+    overflow: hidden;
+}
+
 .blog {
     transition: width 3s, height 3s;
     position: absolute;
-    right: 4vw;
+    // right: 4vw;
 }
 
 .blog.toggled {
@@ -135,22 +161,22 @@ body {
 }
 
 .work-card {
-    background-color: #cbeaf2;
+    background-color: $myBlue;
     border-style: solid;
     border-radius: 5px;
-    border-width: 5px;
-    border-color: #efefef;
-    text-align: center;
-    // padding: 1em;
+    border-width: 2px;
+    border-color: $myWhite;
+    // // text-align: center;
+    // padding: 10px;
     width: inherit;
     height: inherit;
 }
 
-.card-img {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #50514f;
-}
+// .card-img {
+//     border-style: solid;
+//     border-width: 1px;
+//     border-color: #50514f;
+// }
 
 .nav-section {
     background-color: transparent;
@@ -159,7 +185,7 @@ body {
 // *********
 .bm-burger-button {
     position: fixed;
-    width: 36px;
+    width: 60px;
     height: 30px;
     right: 36px;
     top: 36px;
@@ -167,12 +193,12 @@ body {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    // background: #373a47;
-    background: #ff3b3f;
+    background: $myRed;
+    // background: #ff3b3f;
 }
 
 .bm-burger-bars-hover {
-    background: #373a47;
+    background: $myRed;
 }
 
 div.bm-menu-wrap {
@@ -184,6 +210,7 @@ div.bm-menu-wrap {
 .bm-menu {
     background: #a9a9a9;
     padding: 2.5em 1.5em 0;
+    font-family: $font-serif;
     font-size: 1.15em;
     width: 100vw;
 }
@@ -200,7 +227,7 @@ div.bm-menu-wrap {
 
 /* Color/shape of close button cross */
 .bm-cross {
-    background: red;
+    background: $myRed;
 }
 
 /* Wrapper for item list */
@@ -214,6 +241,8 @@ div.bm-menu-wrap {
 .bm-item {
     display: inline-block;
     font-size: 4em;
+    outline: 0;
+    border: none;
 }
 
 // *** not sure this is needed ***
@@ -242,10 +271,10 @@ div.bm-menu-wrap {
 .first-section {
     width: 100vw;
     font-family: 'Coda', cursive;
-    height: 750px;
+    height: auto;
     position: relative;
     text-align: center;
-    overflow: hidden;
+    // overflow: hidden;
     font-size: 10em;
     object-fit: fill;
     // background-image: url(https://visitvulcan.com/uploads/2019/12/homeslide_visit_vulcan.jpg);
@@ -266,19 +295,26 @@ div.bm-menu-wrap {
     // -webkit-text-fill-color: transparent;
 }
 
+.home-title {
+    color: #F4F4EF;
+    // font-family: 'Cardo' serif;
+    font-family: 'Dosis' sans-serif;
+    font-size: 2em;
+}
+
 .sec-img {
     position: absolute;
     height: 900px;
     width: 100vw;
     object-fit: cover;
-    left: 10vw;
+    left: 0;
 }
 
 .first-section-img {
     display: block;
     margin-right: auto;
     width: 100%;
-    z-index: 1;
+    // z-index: 0;
     position: relative;
     // object-fit: cover;
     width: 100vw;
@@ -368,7 +404,8 @@ div.bm-menu-wrap {
     padding: 0;
     width: 50vw;
     height: 750px;
-    background-color: #efefef;
+    background-color: #030D12;
+
 }
 
 .button-div {
@@ -392,21 +429,28 @@ div.bm-menu-wrap {
         width: auto;
         object-fit: cover;
         position: absolute;
-        left: 0;
+        // left: 0;
+
         // top: 200px;
+    }
+    .about-img-div {
+        background-color: black;
     }
 }
 
-@media screen and (min-width: 1054px) {
+@media screen and (min-width: 1053px) {
     .about-image {
         height: 750px;
         width: 51vw;
         object-fit: cover;
         position: absolute;
         left: 0;
+
         // top: 200px;
     }
 }
+
+
 
 .about-img-div {
     width: 50vw;
@@ -414,6 +458,7 @@ div.bm-menu-wrap {
     text-align: center;
     white-space: nowrap;
     position: relative;
+    // color: #030D12;
     // top: 10vw;
 }
 

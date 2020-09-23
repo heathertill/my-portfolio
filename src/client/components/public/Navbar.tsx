@@ -6,25 +6,17 @@ import { fallDown as Menu } from 'react-burger-menu'
 
 export interface NavbarProps { }
 
-const Navbar: React.SFC<NavbarProps> = () => {
+const Navbar: React.FunctionComponent<NavbarProps> = () => {
 
     const homeId = location.pathname === "/" ? "active-item" : "";
     const aboutId = location.pathname === "/about" ? "active-item" : "";
     const contactId = location.pathname === "/contact" ? "active-item" : "";
     const workId = location.pathname === "/work" ? "active-item" : "";
-
-
-    const [open, setOpen] = useState(false);
-
-   
-
- 
-
+    const appCardsId = location.pathname === "/appCards" ? "active-item" : "";
 
     return (
         <section className="nav-section sticky-top" >
             <Menu
-                // isOpen={open}
                 disableAutoFocus
                 noOverlay
                 customCrossIcon={false}
@@ -33,43 +25,8 @@ const Navbar: React.SFC<NavbarProps> = () => {
                 <a id={aboutId} href="/about" className="menu-item" >About</a>
                 <a id={workId} href="/work" className="menu-item">Work</a>
                 <a id={contactId} href="/contact" className="menu-item">Contact</a>
-                
+                <a id={appCardsId} href="/appCards" className="menu-item">AppCards</a>
             </Menu>
-
-
-
-            {/* <div className="hamburger-menu">
-                <div className="nav-icon p-3">
-                    <HamburgerMenu
-                        isOpen={open}
-                        menuClicked={handleClick}
-                        strokeWidth={6}
-                        width={40}
-                        height={30}
-                        rotate={0}
-                        color='#ff3b3f'
-                        animationDuration={.5}
-                    />
-
-                </div>
-                {open ?
-                    <div >
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <a href="#sec2" className="nav-link"
-                                // onClick={handleClick}
-                                >Section 2</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="" className="nav-link">Another Section</a>
-                            </li>
-                            <li className="nav-item">
-                                <a href="" className="nav-link">Page</a>
-                            </li>
-                        </ul>
-                    </div>
-                    : null}
-            </div> */}
         </section>
     );
 }

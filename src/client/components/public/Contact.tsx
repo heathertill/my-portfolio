@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 export interface ContactProps { }
 
-const Contact: React.SFC<ContactProps> = () => {
+const Contact: React.FunctionComponent<ContactProps> = () => {
 
     const [name, setName] = useState('')
     const [emailAd, setEmailAd] = useState('');
@@ -13,10 +13,8 @@ const Contact: React.SFC<ContactProps> = () => {
     const [message, setMessage] = useState('');
     const [saveStatus, setSaveStatus] = useState('');
 
-
     const handleEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // let fullName = name;
         let newMessage = name + " \n \n " + message;
         let body = {
             from: emailAd,

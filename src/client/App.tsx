@@ -8,6 +8,7 @@ import Navbar from './components/public/Navbar';
 import About from './components/public/About';
 import Contact from './components/public/Contact';
 import Work from './components/public/Work';
+import AppCards from './components/public/AppCards';
 
 const App: React.SFC<AppProps> = () => {
     return (
@@ -19,6 +20,7 @@ const App: React.SFC<AppProps> = () => {
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact' component={Contact} />
                     <Route exact path='/work' component={Work} />
+                    <Route exact path='/appCards' component={AppCards} />
                 </Switch>
             </main>
         </BrowserRouter>
