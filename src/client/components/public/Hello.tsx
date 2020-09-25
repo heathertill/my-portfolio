@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom'
 
+
 export interface HelloProps extends RouteComponentProps { }
 
 const Hello: React.FunctionComponent<HelloProps> = () => {
@@ -13,6 +14,9 @@ const Hello: React.FunctionComponent<HelloProps> = () => {
             setAnimate(!animate);
             if (animate !== true) {
                 expandFunc()
+                setTimeout(() => {
+                    location.replace('/about')
+                }, 2000)
             } else {
                 closeFunc()
             }
@@ -20,43 +24,52 @@ const Hello: React.FunctionComponent<HelloProps> = () => {
     }
 
     const expandFunc = () => {
-        let slide = document.querySelector('.lft-section');
+        let slide = document.querySelector('.img-section');
         slide.classList.add('toggled');
+        let slide2 = document.querySelector('.first-section-img');
+        slide2.classList.add('toggled')
+        let slide3 = document.querySelector('.hello-title');
+        slide3.classList.add('toggled');
+        let slide4 = document.querySelector('.hello-section');
+        slide4.classList.add('fadeout');
     }
 
     const closeFunc = () => {
-        let slide = document.querySelector('.lft-section');
+        let slide = document.querySelector('.img-section');
         slide.classList.remove('toggled');
     }
 
+    const slowShow = () => {
+        setTimeout(() => {
+            console.log('ding')
+            document.getElementById('hello-link').classList.add('showDiv', 'fastFadeIn')
+            document.getElementById('hello-link').classList.remove('hideDiv')
+        }, 2500)
+    }
+
     return (
-        <section className="container-fluid">
-            <div className="row">
-                {/* <div className="col mr-auto">Heather Till</div> */}
-                <img src="images/bham.jpeg" alt="birmingham skyline" className="first-section-img position-absolute" />
+        <section className="container-fluid hello-container fadeIn">
+            <div className="row img-section">
+                <img src="images/bham.jpeg" alt="birmingham skyline" className="first-section-img" />
                 <div>
-                    <div className="col m-3 home-title">Heather Till</div>
+                <div className="hello-title" >
+                    <div className="col m-3">Heather Till</div>
                 </div>
+                <div className="hello-display-div hideDiv" id="hello-link">
+                    <div className="middle-layer">
+                        <div className="inner-layer">
+                            <div className="hello-display" id="circle-text"
+                                onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAnimate(e)}>Click Here</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                {slowShow()}
             </div>
-
-
-
-            {/* <section className="first-section">
-                <div className="sec-div">
-                    <img className="sec-img" src="images/bham.jpeg" alt="bham" />
-                    <div className="img-sec-div">
-                        <img className="first-section-img" src="images/newGeoOver.png" alt="geoOverlay" />
-                    </div>
-                </div>
-            </section> */}
-            {/* <section id="sec2" className="second-section">
-                <div className="row second-sec-div">
-                    <div className="col-md lft-section">
-                        <img src="images/shoppingCode.png" alt="shoppingCode" className="second-section-img" style={{ opacity: 0.75 }} />
-                        <div className="box" onClick={(e: React.MouseEvent<HTMLDivElement>) => handleAnimate(e)}></div>
-                    </div>
-                </div>
-            </section> */}
+            <div className="hello-section">
+                <div className="hello-intro">Who am I?</div>
+                <div className="hello-body">I am a fullstack web developer from Birmingham, Alabama. I strive to create intuitive design and functionality for a superior user experience.</div>
+            </div>
         </section>
     );
 }

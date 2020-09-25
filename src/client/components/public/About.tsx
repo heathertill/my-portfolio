@@ -1,26 +1,34 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom'
 
+import Footer from '../public/Footer';
+
 export interface AboutProps { }
 
-const About: React.SFC<AboutProps> = () => {
+const About: React.FunctionComponent<AboutProps> = () => {
+
+
+
+
+
     return (
-        <section className="about">
-            <div className="row ml-0">
-                <div className="about-left col-md">
-                    <div className="about-img-div">
-                        <img className="about-image" src="/images/Heather11.jpg" alt="family" />
-                    </div>
-                </div>
-                <div className="about-right col-md">
-                    <div className="about-text">
-                        <div className="about-text-heading">Heather Till</div>
-                        <div className="about-text-content">I am a fullstack web developer. I am a problem solver. I love intuitive design and functionalily.</div>
-                        <div className="button-div">
-                            <Link className="contact-button" to="/Contact">Contact Me</Link>
+        <section className="about fastFadeIn">
+            <div className="">
+                <div className="row mx-0">
+                    <div className="about-left col-md">
+                        <div className="about-img-div">
+                            <img className="about-image" src="/images/Heather11.jpg" alt="family" />
                         </div>
                     </div>
-
+                    <div className="about-right col-md">
+                        <div className="about-text">
+                            <div className="about-text-heading">Heather Till</div>
+                            <div className="about-text-content">I am a fullstack web developer. I am a problem solver. I love intuitive design and functionalily.</div>
+                            <div className="button-div">
+                                <Link className="contact-button" to="/Contact">Contact Me</Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="skills-section p-3">
@@ -58,6 +66,7 @@ const About: React.SFC<AboutProps> = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </section>
 
     );

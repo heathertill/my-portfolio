@@ -12,20 +12,17 @@ const Navbar: React.FunctionComponent<NavbarProps> = () => {
     const aboutId = location.pathname === "/about" ? "active-item" : "";
     const contactId = location.pathname === "/contact" ? "active-item" : "";
     const workId = location.pathname === "/work" ? "active-item" : "";
-    const appCardsId = location.pathname === "/appCards" ? "active-item" : "";
 
     return (
         <section className="nav-section sticky-top" >
             <Menu
                 disableAutoFocus
                 noOverlay
-                customCrossIcon={false}
-            >
+                customCrossIcon={false} >
                 <a id={homeId} href="/" className="menu-item" >Home</a>
                 <a id={aboutId} href="/about" className="menu-item" >About</a>
                 <a id={workId} href="/work" className="menu-item">Work</a>
                 <a id={contactId} href="/contact" className="menu-item">Contact</a>
-                <a id={appCardsId} href="/appCards" className="menu-item">AppCards</a>
             </Menu>
         </section>
     );

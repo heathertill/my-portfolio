@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { useState } from 'react';
 
+import Footer from '../public/Footer';
+
 export interface WorkProps { }
 
 const Work: React.FunctionComponent<WorkProps> = () => {
@@ -21,6 +23,7 @@ const Work: React.FunctionComponent<WorkProps> = () => {
             }
         }
     }
+
 
     const handleBlogAnimate = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e) {
@@ -77,22 +80,24 @@ const Work: React.FunctionComponent<WorkProps> = () => {
         window.open(id, "_blank")
     }
 
+
     return (
-        <section className="work-section">
+        <section className="work-section fadeIn">
             <img src="images/codeScreen.png" alt="computer code image" className="work-background" />
             <div className="work-over">
+                {/* <img src="images/codeScreen.png" alt="computer code image" className="work-background" /> */}
+                {/* <div className="work-div"> */}
                 <div className="work-intro">
                     <h1 className="work-title">Check out some of my work...</h1>
                 </div>
-                <div className="row row-cols-2 row-cols-sm-1 d-flex justify-content-center">
+                <div className="row row-cols-2 row-cols-sm-1 work-div">
                     <div className="col-md-4 work-card-div">
                         <div className="card work-card shopping"
                             onClick={(e: React.MouseEvent<HTMLDivElement>) => handleShoppingAnimate(e)} >
                             <img src="images/shopComp.png" alt="shoping app" className="card-img-top" />
                             <div className="card-title work-card-title">Shopping</div>
                             <div className="card-text hideDiv" id="shop-content">
-                                <div className="text-myWhite">This is a fullstack shopping app. Users login and add items to the group shopping list. When items are purchased or removed the user who added the item will recieve a text informing them of the items status.</div>
-                                <a href="https://stormy-sea-01231.herokuapp.com">See it working!</a>
+                                <div className="text-myWhite">This is a fullstack shopping app. Users login and add items to the group shopping list. When items are purchased or removed the user who added the item will recieve a text informing them of the items status.</div>                              
                                 <button onClick={() => openApp("https://stormy-sea-01231.herokuapp.com")}>See it working!</button>
                             </div>
                         </div>
@@ -104,12 +109,14 @@ const Work: React.FunctionComponent<WorkProps> = () => {
                             <div className="card-title work-card-title">Blog</div>
                             <div className="hideDiv" id="blog-content">
                                 <div className="card-text">Stuff about the app</div>
-                                <button className="" onClick={() => openApp("https://stormy-sea-01231.herokuapp.com")}>See it working!</button>
+                                <button className="" onClick={() => openApp("https://limitless-bastion-43539.herokuapp.com")}>See it working!</button>
                             </div>
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer />
         </section>
     );
 }
